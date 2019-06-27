@@ -13,17 +13,20 @@ class ItemBlock extends React.Component{
         super(props)
         this.state = {
             name1 : this.props.name,
-            flavor: this.props.flavor
+            flavor: this.props.flavor,
+            price: this.props.price,
+            url: this.props.url
         }
         this.HHH = this.HHH.bind(this)
+        this.seeC = this.seeC.bind(this)
     }
+
 
     HHH(e){
         e.preventDefault();
-        document.getElementById('show_selection').innerText = '' ;
+        document.getElementById('show_selection').innerText = '' 
+        document.getElementById('show_selection_block').style.right = '0' 
 
-
-        console.log(this.state)
         arr = [...arr, this.state]
         console.log(arr);
         arr.map(function(value, index){
@@ -31,21 +34,23 @@ class ItemBlock extends React.Component{
             let div = document.createElement('div')
 
             div.setAttribute("class","show_selection")
-            div.innerHTML += value.flavor + '<br>'
 
+            div.innerHTML += '<div>Name: ' + value.name1 + '</div>' + '<div>Flavor: ' + value.flavor + '</div>' + '<br/>'
             document.getElementById('show_selection').append(div)
-
-            // document.getElementById('show_selection').innerText += ' ' + value.flavor;
         });
 
-        this.props.getData(this.state);
+
     }
 
+    seeC(){
+        console.log(this.state);
+        this.props.getData(this.state);
+    }
 
     render(){
         return (
             <div class='item-block'>
-                <div onClick={this.HHH}>
+                <div onClick={this.seeC}>
                     <ItemImage url={this.props.url}/>
                     <ItemDetail name={this.props.name} flavor={this.props.flavor} price={this.props.price} discount={this.props.discount}/>
                 </div>

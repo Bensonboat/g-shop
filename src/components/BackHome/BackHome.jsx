@@ -10,7 +10,12 @@ class BackHome extends React.Component{
 
     render(){
         return (
-            <button class='back' onClick={this.showBlock}> (~~~ Back </button>
+            <div>
+                <button class='back' onClick={this.showBlock}>
+                    <i class="fas fa-arrow-circle-left"></i>
+                    Back
+                </button>
+            </div>
         )
     }
 }
