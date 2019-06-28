@@ -6,8 +6,6 @@ import { ItemImage } from '../ItemImage'
 import { ItemDetail } from '../ItemDetail'
 
 
-let arr = []
-
 class ItemBlock extends React.Component{
     constructor(props){
         super(props)
@@ -17,33 +15,33 @@ class ItemBlock extends React.Component{
             price: this.props.price,
             url: this.props.url
         }
-        this.HHH = this.HHH.bind(this)
+        // this.HHH = this.HHH.bind(this)
         this.seeC = this.seeC.bind(this)
     }
 
 
-    HHH(e){
-        e.preventDefault();
-        document.getElementById('show_selection').innerText = '' 
-        document.getElementById('show_selection_block').style.right = '0' 
+    // HHH(e){
+    //     e.preventDefault();
+    //     document.getElementById('show_selection').innerText = '' 
+    //     document.getElementById('show_selection_block').style.right = '0' 
 
-        arr = [...arr, this.state]
-        console.log(arr);
-        arr.map(function(value, index){
-            console.log(value);
-            let div = document.createElement('div')
+    //     arr = [...arr, this.state]
+    //     console.log(arr);
+    //     arr.map(function(value, index){
+    //         console.log(value);
+    //         let div = document.createElement('div')
 
-            div.setAttribute("class","show_selection")
+    //         div.setAttribute("class","show_selection")
 
-            div.innerHTML += '<div>Name: ' + value.name1 + '</div>' + '<div>Flavor: ' + value.flavor + '</div>' + '<br/>'
-            document.getElementById('show_selection').append(div)
-        });
+    //         div.innerHTML += '<div>Name: ' + value.name1 + '</div>' + '<div>Flavor: ' + value.flavor + '</div>' + '<br/>'
+    //         document.getElementById('show_selection').append(div)
+    //     });
 
 
-    }
+    // }
 
     seeC(){
-        console.log(this.state);
+        // console.log(this.state);
         this.props.getData(this.state);
     }
 
@@ -52,7 +50,8 @@ class ItemBlock extends React.Component{
             <div class='item-block'>
                 <div onClick={this.seeC}>
                     <ItemImage url={this.props.url}/>
-                    <ItemDetail name={this.props.name} flavor={this.props.flavor} price={this.props.price} discount={this.props.discount}/>
+                    <ItemDetail name={this.props.name} flavor={this.props.flavor} price={this.props.price} discount={this.props.discount} detail={this.props.detail} />
+                    <div onClick={this.props.AddToCart} >+</div>
                 </div>
             </div>
         )

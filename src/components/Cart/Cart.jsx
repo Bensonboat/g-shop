@@ -5,12 +5,16 @@ import React from 'react'
 class Cart extends React.Component{
 
     showSelection(){
-        document.getElementById('show_selection_block').style.right = '0'
+        document.getElementById('add_to_cart').style.right = '0'
+    }
+
+    showAddToCartList(){
+        document.getElementById('add_to_cart_list').style.display = ''
     }
 
     render(){
         return (
-            <div class='cart' onClick={this.showSelection}>
+            <div class='cart' onClick={this.showAddToCartList}>
                <i class="fas fa-shopping-cart"></i>
             </div>
         )

@@ -11,6 +11,7 @@ class ItemDetail extends React.Component{
                 <div>{ this.props.flavor }</div>
                 <div>{this.props.price}</div>
                 <div>{ this.props.discount }</div>
+                <div>{ this.props.detail }</div>
             </div>
         )
     }
