@@ -43,16 +43,17 @@ class ItemBlock extends React.Component{
     seeC(){
         // console.log(this.state);
         this.props.getData(this.state);
+        console.log('nonnonono')
     }
 
     render(){
         return (
-            <div class='item-block'>
-                <div onClick={this.seeC}>
+            <div class='item-block' onClick={this.seeC}>
+                <div onClick={(e) => { this.props.showSelectionList(e)} }>
                     <ItemImage url={this.props.url}/>
                     <ItemDetail name={this.props.name} flavor={this.props.flavor} price={this.props.price} discount={this.props.discount} detail={this.props.detail} />
-                    <div onClick={this.props.AddToCart} >+</div>
                 </div>
+                <div onClick={this.props.AddToCart} >+</div>
             </div>
         )
     }

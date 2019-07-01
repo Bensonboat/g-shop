@@ -9,7 +9,7 @@ class Cart extends React.Component{
     }
 
     showAddToCartList(){
-        document.getElementById('add_to_cart_list').style.display = ''
+        document.getElementById('add_to_cart_list').style.right = '0'
     }
 
     render(){
